@@ -1,0 +1,161 @@
+import java.util.*;
+ class textile{
+    public  textile(int x, int y){
+        if(x==1 && y==1){
+            System.out.println("Readymade for Mens");
+        }
+        else if(x==2 && y==1){
+            System.out.println("Material for Mens");
+        }
+        else{
+            System.out.println("No Stock");
+        }
+    }
+ }
+class Men{
+  public void Mens_floor(){
+    System.out.println("Welcome to Mens World");
+  }
+}
+  class Shirt extends Men{
+    public void Mens_floor(String shirt, String size){
+      Scanner sc= new Scanner(System.in);
+      if(shirt.equals("S") || shirt.equals("s")){
+        
+        System.out.println("Size= "+size);
+            if (size.equals("s") || size.equals("m") || size.equals("l") || size.equals("xl")) {
+                System.out.println("Available");
+                System.out.println("Enter no.of. Shirts=");
+            int a=sc.nextInt();
+            System.out.println("Selected shirts= "+a);
+                int c=50;
+                int s=0;
+                for( s=c;s<=c;){
+                  s=c-a;
+                   System.out.println("Remaining= "+s);
+                   break;
+                }
+                System.out.println("Select option 1 or 2= ");
+                   int ch=sc.nextInt();
+                   
+                   switch(ch){
+                       case 1:
+                           c=s;
+                   for(c=s;c<=s;){
+                     int b=sc.nextInt();
+                     b=c-b;
+                     System.out.println("No.of.Shirt Stocks= "+b);
+                     c=b;
+                     if(c==0){
+                         System.out.println("No Stock");
+                         break;
+                   }
+                   
+                     }
+                   }
+                     
+                   }
+                   else{
+                       System.out.println("Next");
+                   }
+                
+            }
+      }
+    }
+    
+class Pant extends Men{
+public void Mens_floor(String pant, int size){
+      Scanner c= new Scanner(System.in);
+      if(pant.equals("P") || pant.equals("p")){
+        
+        System.out.println(size);
+            if (size==28 || size==30 || size==32 || size==34 || size==36) {
+                System.out.println("Available");
+            System.out.println("Enter no.of Pants= ");
+            int b=c.nextInt();
+                int d=40;
+                int t=0;
+                for( t=d;t<=d;){
+                  t=d-b;
+                   System.out.println("Remaining no of Pants= "+t);
+                   break;
+                }
+                System.out.println("Select option 1 or 2= ");
+                  int f=c.nextInt();
+                  switch(f){
+                      case 1:
+                   for(d=t;d<=t;){
+                     int e=c.nextInt();
+                     e=d-e;
+                     System.out.println("No.of.Pant Stocks= "+e);
+                     d=e;
+                     if(d==0){
+                         System.out.println("No Stock");
+                         break;
+                     }
+                     
+                   }
+                  }
+                }
+            }
+      }
+    }
+
+    class Billing{
+        double value;
+        double pvalue;
+        double total;
+        Scanner sc= new Scanner(System.in);
+    public double getPvalue(){
+        return pvalue;
+    }
+    public void setPvalue(double Pvalue){
+        this.pvalue= Pvalue;
+        System.out.println("Enter the no of Pants= ");
+        double b= sc.nextDouble();
+        pvalue=pvalue*b;
+         System.out.println("Enter discount value= ");
+        double dis=sc.nextDouble();
+        double c= pvalue*(dis/100);
+        System.out.println("Discount rate= "+c);
+        pvalue=pvalue-c;
+        System.out.println("Amount to be Paid= "+pvalue);
+    }
+     public double getValue(){
+        return value;
+    }
+    public void setValue(double snValue){
+        this.value= snValue;
+        System.out.println("Enter the no of Shirts= ");
+        double d= sc.nextDouble();
+        value=value*d;
+         System.out.println("Enter discount value= ");
+        double dis=sc.nextDouble();
+        double a= value*(dis/100);
+        System.out.println("Discount rate= "+a);
+        value=value-a;
+        System.out.println("Amount to be Paid= "+value);
+        
+    }
+    public void Total() {
+        total = value + pvalue;
+        System.out.println("Total amount to be paid = " + total);
+    }
+    }
+public class Main {
+    public static void main(String[] args) {
+        textile obj = new textile(1, 1);
+        Men obj1 = new Men();
+        Men obj2 = new Shirt();
+        Men obj3= new Pant();
+        obj1.Mens_floor();
+        ((Shirt) obj2).Mens_floor("s", "xl");
+        ((Pant) obj3).Mens_floor("p",36);
+        Billing ob4= new Billing();
+        ob4.setValue(700);
+        ob4.setPvalue(500);
+        ob4.getValue();
+        ob4.getPvalue();
+        ob4.Total();
+    }
+}
